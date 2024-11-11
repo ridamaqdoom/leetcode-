@@ -27,6 +27,28 @@ If no match is found by the end, return -1
 --------------------------------------------------------------------------------------------------------
 
 
+35. Search Insert Position
+
+Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+My Solution:
+
+We initialize two pointers, left and right. left starts at the beginning of the list (0), and right starts at the end of the list (len(nums) - 1). These pointers help in performing the binary search.
+
+Calculate the middle index mid of the current range defined by left and right. The // operator performs integer division.
+
+If the element at the midpoint (nums[mid]) is greater than the target, it means the target must be in the left half of the current range. We adjust the right pointer to mid - 1 to narrow the search to the left half.
+
+If the element at the midpoint (nums[mid]) is less than the target, it means the target must be in the right half of the current range. We adjust the left pointer to mid + 1 to narrow the search to the right half.
+
+
+If the target is not found in the list, the while loop will terminate when left is greater than right. At this point, left will be the index where the target should be inserted to maintain the sorted order. We return left as the insertion point.
+
+
+--------------------------------------------------------------------------------------------------------
+
 
 
 
