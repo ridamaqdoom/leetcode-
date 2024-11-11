@@ -1,3 +1,4 @@
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -12,6 +13,7 @@ class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         // We will use dummy list to solve this 
         ListNode dummy = new ListNode(0);
+        // let current item be the dummy assume 
         ListNode current = dummy;
 
         while(list1 != null && list2 != null){
@@ -26,9 +28,9 @@ class Solution {
             current = current.next; }
 
         if(list1 == null){
-            current.next = list1;
-        } else if(list2 != null){
             current.next = list2;
+        } else if(list2 == null){
+            current.next = list1;
         }
 
     return dummy.next;
@@ -50,4 +52,3 @@ class Solution {
 
 
     
-
