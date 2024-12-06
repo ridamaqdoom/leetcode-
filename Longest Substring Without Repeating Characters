@@ -1,0 +1,20 @@
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        result = []  # Store the current substring without repeating characters
+        output = 0  # Keep track of the maximum length
+        
+        for i in s:
+            if i in result:  
+                # Remove characters from the start until the duplicate is gone
+                while i in result:
+                    result.pop(0)  
+            result.append(i)  
+            output = max(output, len(result))  
+            
+        return output
+
+        
